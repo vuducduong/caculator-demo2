@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+</head>
+<body>
+<style>
+    td{
+        width: 75px;
+        height: 75px;
+        text-align: center;
+        font-size:30px;
+    }
+#first{
+    text-align: right;
+}
+</style>
+<table border="1" cellspacing="20">
+
+    <tr>
+        <td colspan="4" id="first">
+        </td>
+    </tr>
+    <tr>
+        <td onclick="clickCell(1)">1</td>
+        <td onclick="clickCell(2)">2</td>
+        <td onclick="clickCell(3)">3</td>
+        <td onclick="clickCell('+')">+</td>
+    </tr>
+    <tr>
+        <td onclick="clickCell(4)">4</td>
+        <td onclick="clickCell(5)">5</td>
+        <td onclick="clickCell(6)">6</td>
+        <td onclick="clickCell('-')">-</td>
+    </tr>
+    <tr>
+        <td onclick="clickCell(7)">7</td>
+        <td onclick="clickCell(8)">8</td>
+        <td onclick="clickCell(9)">9</td>
+        <td onclick="clickCell('x')">x</td>
+    </tr>
+    <tr>
+        <td onclick="eSport()">C</td>
+        <td onclick="clickCell(0)">0</td>
+        <td onclick="kQ()">=</td>
+        <td onclick="clickCell('/')">/</td>
+    </tr>
+    <script>
+        let first = document.getElementById('first')
+        function clickCell(value) {
+            first.innerHTML += value;
+        }
+        function kQ(){
+            let str = first.innerHTML;
+            let result = eval(str);
+            first.innerHTML = result;
+        }
+        function eSport(){
+            first.innerHTML="";
+        }
+    </script>
+</table>
+</body>
+</html>
